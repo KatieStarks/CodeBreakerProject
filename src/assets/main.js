@@ -18,11 +18,11 @@ function guess() {
         showAnswer(true);
         showReplay();
     } else if(!getResults(input) && (attempt.value >= 10)) {
-        setMessage("You lose! :(")
+        setMessage("You lose! :(");
         showAnswer(false);
         showReplay();
     } else {
-        setMessage("Nope, try again.")
+        setMessage("Nope, try again.");
     }
 }
 
@@ -56,9 +56,9 @@ function showAnswer(success){
     let code = document.getElementById('code');
     code.innerHTML = answer.value;
     if(success) {
-        code.className += " success"
+        code.className += " success";
     } else {
-        code.className += " failure"
+        code.className += " failure";
     }
 }
 
