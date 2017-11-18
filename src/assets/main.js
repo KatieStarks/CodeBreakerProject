@@ -11,18 +11,17 @@ function guess() {
     if(!validateInput(input.value)) {
         return false;
     }
-    attempt.value++;
 
     if (getResults(input.value)) {
-        setMessage('You win! :)');
+        setMessage('You Win! :)');
         showAnswer(true);
         showReplay();
     } else if(attempt.value >= 10) {
-        setMessage('You lose! :(');
+        setMessage('You Lose! :(');
         showAnswer(false);
         showReplay();
     } else {
-        setMessage('Nope, try again.');
+        setMessage('Incorrect, try again.');
     }
 }
 
@@ -73,7 +72,7 @@ function setHiddenFields() {
     while (answer.value.length < 4){
         answer.value = "0" + answer.value;
     }
-    attempt = 0;
+    attempt.value = 0;
 }
 
 //sets the message label to whatever provided
@@ -84,6 +83,7 @@ function setMessage(message) {
 //validate user input
 function validateInput(input) {
     if(input.length == 4) {
+        attempt.value++;
         return true;
     } else {
         setMessage("Guesses must be exactly 4 characters long.");
